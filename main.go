@@ -1,3 +1,21 @@
+// Package classification of API
+//
+// Documentation of our awesome API.
+//
+//	Schemes: http, https
+//	Host: localhost:8080
+//	BasePath: /
+//	Version: 1.0.0
+//	License: MIT http://opensource.org/licenses/MIT
+//	Contact: John Doe<john.doe@example.com> http://johndoe.io
+//
+//	Consumes:
+//	- application/json
+//
+//	Produces:
+//	- application/json
+//
+// swagger:meta
 package main
 
 import (
@@ -41,6 +59,14 @@ func NewRecipeHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, recipe)
 }
 
+// swagger:operation GET /recipes recipes listRecipes
+// Returns list of recipes
+// ---
+// produces:
+// - application/json
+// responses:
+// '200':
+// description: Successful operation
 func ListRecipesHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, recipes)
 }
