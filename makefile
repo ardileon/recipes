@@ -6,3 +6,9 @@ test :
 
 run : build
 	@./bin/hello
+
+swaggerBuild :
+	@swagger generate spec -o ./swagger.json
+
+swagger: swaggerBuild
+	@swagger serve -F swagger ./swagger.json
